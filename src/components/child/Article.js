@@ -30,9 +30,9 @@ const ArticleHeader = styled.h3`
   padding: 1rem;
   ${(props) => {
     if (props.imgSrc === "") {
-      return "color: #0048B4; font-style: normal; font-size:16px;";
+      return `color: #0048B4; font-style: normal; font-size: 1rem;`;
     } else {
-      return "color: white; font-style: italic; font-size:25px;";
+      return "color: white; font-style: italic; font-size:1.5rem;";
     }
   }}
 `;
@@ -40,7 +40,7 @@ const ArticleHeader = styled.h3`
 const ArticleParag = styled.p`
   padding: 1rem;
   position: relative;
-  top: 180px;
+  top: 165px;
   margin: 0;
   font-size: 20px;
   ${(props) => {
@@ -56,8 +56,8 @@ const Article = () => {
   return (
     <Grid>
       {articleData.map((data, i) => (
-        <Row maxWidth={"863px"} height={"308px"} key={i}>
-          <Col size={2} marginLeft={"13px"} marginTop={"14px"}>
+        <Row maxWidth={"863px"} key={i} flexDirection={"column"}>
+          <Col size={2} height={"300px"}>
             <ArticleImgHolder imgSrc={data[0].img}>
               <ArticleHeader imgSrc={data[0].img}>
                 {data[0].title}
@@ -67,7 +67,7 @@ const Article = () => {
               </ArticleParag>
             </ArticleImgHolder>
           </Col>
-          <Col size={2} marginLeft={"13px"} marginTop={"14px"}>
+          <Col size={2} height={"300px"}>
             <ArticleImgHolder imgSrc={data[1].img}>
               <ArticleHeader imgSrc={data[1].img}>
                 {data[1].title}
