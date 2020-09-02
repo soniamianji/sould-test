@@ -15,7 +15,10 @@ font-style: normal;
 font-weight: normal;
 background-color: transparent;
 padding: 1rem;
-font-size: 20px;
+font-size: ${(props) => props.theme.mdFont};
+@media (max-width: 768px) {
+   max-width: 300px;
+  }
 
 &:hover {
     background-color: ${(props) => props.theme.mainBlue};
