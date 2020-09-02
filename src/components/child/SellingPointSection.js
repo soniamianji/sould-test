@@ -1,24 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import { Grid, Row, Col } from "../../config/girdSytem";
-import UspCol from "./UspCol";
+import UspOfferings from "./UspOfferings";
+import offerings from "../../rawOfferingData";
 
 const UspSection = styled.section`
   background-color: ${(props) => props.theme.regalGray};
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const UpsText = styled.div`
   color: ${(props) => props.theme.mainBlue};
-  padding: 3rem;
+  padding: 0.5rem;
   max-width: 782px;
-  margin: auto;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 3rem;
+    max-width: 782px;
+    margin: auto;
+    text-align: left;
+  }
 `;
 const UpsHeader = styled.h3`
   font-familiy: ${(props) => props.theme.headerFontFamiliy};
   font-weight: 300;
-  font-size: 30px;
+  font-size: ${(props) => props.theme.lgFont};
 `;
 
 const SellingPointSection = () => {
@@ -42,28 +55,19 @@ const SellingPointSection = () => {
       <UpsText>
         <UpsHeader>Vi kan hjälpa till med:</UpsHeader>
         <Grid>
-          <Row maxWidth={"782px"} height={"230px"}>
-            <Col size={3}>
-              <UspCol />
-            </Col>
-            <Col size={3}>
-              <UspCol />
-            </Col>
-            <Col size={3}>
-              <UspCol />
-            </Col>
-          </Row>
-          <Row maxWidth={"782px"}>
-            <Col>
-              <UspCol />
-            </Col>
-            <Col>
-              <UspCol />
-            </Col>
-            <Col>
-              <UspCol />
-            </Col>
-          </Row>
+          {offerings.map((offering, i) => (
+            <Row maxWidth={"782px"} textAlign={"center"}>
+              <Col size={1}>
+                <UspOfferings icon={offering[0].icon} text={offering[0].text} />
+              </Col>
+              <Col size={1}>
+                <UspOfferings icon={offering[1].icon} text={offering[1].text} />
+              </Col>
+              <Col size={1}>
+                <UspOfferings icon={offering[2].icon} text={offering[2].text} />
+              </Col>
+            </Row>
+          ))}
         </Grid>
       </UpsText>
     </UspSection>

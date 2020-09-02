@@ -4,22 +4,20 @@ import icon from "../../assets/icon.svg";
 
 const IconUsp = styled.img`
   max-width: 40px;
+  padding: 1rem 0;
 `;
 const UspDescription = styled.p`
   font-familiy: ${(props) => props.theme.headerFontFamiliy};
   font-weight: 300;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.smFont};
   max-width: 245px;
-  margin-righ: 18px;
+  margin: auto;
 `;
-const UspCol = () => {
+const UspCol = (props) => {
   return (
     <React.Fragment>
-      <IconUsp src={icon} alt="chat icon" />
-      <UspDescription>
-        Rådgivning och stöd kring ändrad produktion om du ställer om för att
-        exempelvis producera handdesinfektion.
-      </UspDescription>
+      <IconUsp src={props.icon} alt="chat icon" />
+      <UspDescription>{props.text}</UspDescription>
     </React.Fragment>
   );
 };
