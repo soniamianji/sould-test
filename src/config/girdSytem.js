@@ -4,15 +4,23 @@ export const Grid = styled.div``;
 
 export const Row = styled.div`
   display: flex;
+  flex-direction: column;
+  text-align: ${(props) => props.textAlign};
   max-width: ${(props) => props.maxWidth};
-  margin: auto;
-  height: ${(props) => props.height};
-  margin-top: ${(props) => props.marginTop};
+  @media (min-width: 550px) {
+    flex-flow: wrap;
+    justify-content: flex-start;
+  }
+  @media (min-width: 784px) {
+    flex-direction: row;
+    margin: auto;
+    text-align: left;
+  }
 `;
 
 export const Col = styled.div`
   flex: ${(props) => props.size};
-  margin-left: ${(props) => props.marginLeft};
-  margin-top: ${(props) => props.marginTop};
   border-radius: 5px;
+  padding: 0.5em;
+  height: ${(props) => props.height};
 `;
