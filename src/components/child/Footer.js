@@ -37,7 +37,7 @@ const FooterParag = styled.p`
 const FooterLink = styled.a`
   text-decoration: none;
   margin-right: 0.5em;
-  color: ${(props) => props.theme.mainBlue}
+  color: ${(props) => props.theme.regalBlue};
   &:hover {
     cursor: pointer;
   }
