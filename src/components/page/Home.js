@@ -50,7 +50,7 @@ function Home() {
       <Hero>
         {!isMobile ? (
           rawMemberData.map((member, i) => (
-            <Member memberImg={member.image} memberName={member.name} />
+            <Member key={i} memberImg={member.image} memberName={member.name} />
           ))
         ) : (
           <Slider />

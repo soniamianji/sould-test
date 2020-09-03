@@ -56,7 +56,7 @@ const SellingPointSection = () => {
         <UpsHeader>Vi kan hjälpa till med:</UpsHeader>
         <Grid>
           {offerings.map((offering, i) => (
-            <Row maxWidth={"782px"} textAlign={"center"}>
+            <Row maxWidth={"782px"} textAlign={"center"} key={i}>
               <Col size={1}>
                 <UspOfferings icon={offering[0].icon} text={offering[0].text} />
               </Col>
