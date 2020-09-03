@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import arrow from "../../assets/arrow.svg";
 
+const ACTION_BTN_TEXT = "Meddela mig när nästa artikel publiceras";
+
 const ActionButton = styled.button`
 appearance: none; 
 border: 2px solid ${(props) => props.theme.mainBlue};
@@ -16,7 +18,7 @@ font-weight: normal;
 background-color: transparent;
 padding: 1rem;
 font-size: ${(props) => props.theme.mdFont};
-@media (max-width: 768px) {
+@media (max-width:  ${(props) => props.theme.mobileBreakPoint}) {
    max-width: 300px;
   }
 
@@ -35,7 +37,7 @@ font-size: ${(props) => props.theme.mdFont};
 `;
 
 const ActionBtn = () => {
-  return <ActionButton>Meddela mig när nästa artikel publiceras</ActionButton>;
+  return <ActionButton>{ACTION_BTN_TEXT}</ActionButton>;
 };
 
 export default ActionBtn;

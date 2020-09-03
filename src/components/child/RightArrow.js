@@ -1,13 +1,14 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
+import styled from "styled-components";
+
+export const Arrow = styled.i`
+  color: ${(props) => props.theme.regalBlue};
+`;
 function RightArrow(props) {
   return (
     <div onClick={props.goToNextSlide}>
-      <i
-        className="fa fa-angle-right fa-2x"
-        aria-hidden="true"
-        style={{ color: "#004587" }}
-      ></i>
+      <Arrow className="fa fa-angle-right fa-2x" aria-hidden="true"></Arrow>
     </div>
   );
 }

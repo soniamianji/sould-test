@@ -20,7 +20,7 @@ const Hero = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${(props) => props.theme.mobileBreakPoint}) {
     height: 60vh;
     overflow: inherit;
   }

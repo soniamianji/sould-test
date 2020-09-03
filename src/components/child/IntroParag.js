@@ -11,7 +11,7 @@ const MainParag = styled.div`
   font-weight: normal;
   font-size: ${(props) => props.theme.mdFont};
   line-height: 1.75rem;
-  @media (min-width: 768px) {
+  @media (min-width: ${(props) => props.theme.mobileBreakPoint}) {
     max-width: 700px;
     height: 225px;
     text-align: center;

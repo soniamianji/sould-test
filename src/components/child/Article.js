@@ -14,9 +14,9 @@ const ArticleImgHolder = styled.div`
 
   ${(props) => {
     if (props.imgSrc === "") {
-      return "background-color: #f4f7fa";
+      return `background-color: ${props.theme.regalGray};`;
     } else {
-      return ` background-image: url(${squareImg});`;
+      return `background-image: url(${squareImg});`;
     }
   }}
 `;
@@ -30,9 +30,9 @@ const ArticleHeader = styled.h3`
   padding: 1rem;
   ${(props) => {
     if (props.imgSrc === "") {
-      return `color: #0048B4; font-style: normal; font-size: 1rem;`;
+      return `color: ${props.theme.mainBlue}; font-style: normal; font-size: ${props.theme.smFont};`;
     } else {
-      return "color: white; font-style: italic; font-size:1.5rem;";
+      return `color: ${props.theme.regalWhite} ; font-style: italic; font-size: ${props.theme.mdFont};`;
     }
   }}
 `;
@@ -45,9 +45,9 @@ const ArticleParag = styled.p`
   font-size: 20px;
   ${(props) => {
     if (props.imgSrc === "") {
-      return `color: #0048B4 `;
+      return `color: ${props.theme.mainBlue} `;
     } else {
-      return `color: white; padding: 0 1rem;`;
+      return `color: ${props.theme.regalWhite}; padding: 0 1rem;`;
     }
   }};
 `;

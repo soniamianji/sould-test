@@ -13,7 +13,7 @@ const SliderDiv = styled.div`
   align-items: center;
   text-align: center;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 51.5vh;
 `;
 const SliderItems = styled.div`

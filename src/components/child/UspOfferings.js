@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Grid, Row, Col } from "../../config/girdSytem";
+import offerings from "../../rawOfferingData";
 
 const IconUsp = styled.img`
   max-width: 40px;
@@ -12,11 +14,27 @@ const UspDescription = styled.p`
   max-width: 245px;
   margin: auto;
 `;
-const UspCol = (props) => {
+const UspCol = () => {
   return (
     <React.Fragment>
-      <IconUsp src={props.icon} alt="chat icon" />
-      <UspDescription>{props.text}</UspDescription>
+      <Grid>
+        {offerings.map((offering, i) => (
+          <Row maxWidth={"782px"} textAlign={"center"} key={i}>
+            <Col size={1}>
+              <IconUsp src={offering[0].icon} alt="chat icon" />
+              <UspDescription>{offering[0].text}</UspDescription>
+            </Col>
+            <Col size={1}>
+              <IconUsp src={offering[1].icon} alt="chat icon" />
+              <UspDescription>{offering[1].text}</UspDescription>
+            </Col>
+            <Col size={1}>
+              <IconUsp src={offering[0].icon} alt="chat icon" />
+              <UspDescription>{offering[0].text}</UspDescription>
+            </Col>
+          </Row>
+        ))}
+      </Grid>
     </React.Fragment>
   );
 };

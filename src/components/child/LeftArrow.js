@@ -1,12 +1,13 @@
 import React from "react";
+import styled from "styled-components";
+
+export const Arrow = styled.i`
+  color: ${(props) => props.theme.regalBlue};
+`;
 function LeftArrow(props) {
   return (
     <div onClick={props.goToPrevSlide}>
-      <i
-        className="fa fa-angle-left fa-2x"
-        aria-hidden="true"
-        style={{ color: "#004587" }}
-      ></i>
+      <Arrow className="fa fa-angle-left fa-2x" aria-hidden="true"></Arrow>
     </div>
   );
 }
